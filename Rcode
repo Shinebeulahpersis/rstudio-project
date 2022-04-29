@@ -1,0 +1,24 @@
+library(readxl)
+> land2020 <- read_excel("land_utilisation_2020.xlsx", 
++                        range = "A1:F13", col_types = c("numeric", 
++                                                        "text", "numeric", "numeric", "numeric", 
++                                                        "numeric"))
+New names:
+* `Percentage Share to Total Geographical Area` -> `Percentage Share to Total
+  Geographical Area...4`
+* `Percentage Share to Total Geographical Area` -> `Percentage Share to Total
+  Geographical Area...6`
+Warning messages:
+1: Expecting numeric in D2 / R2C4: got 'NA' 
+2: Expecting numeric in F2 / R2C6: got 'NA' 
+> View(land2020)
+> mean(land2020$`Percentage Share to Total Geographical Area...6`)
+[1] NA
+> mea(land2020$`Area in 2017-18 (in Hectares)`)
+Error in mea(land2020$`Area in 2017-18 (in Hectares)`) : 
+  could not find function "mea"
+> mean(land2020$`Area in 2017-18 (in Hectares)`)
+[1] 2664708
+> var(land2020$`Area in 2018-19 (in Hectares)`)
+[1] 1.355583e+13
+> 
